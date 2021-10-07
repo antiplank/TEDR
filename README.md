@@ -9,9 +9,9 @@ Examples:
   
 `!e 4d12 -5`
   
-`!e 3d6 1 Initiative(Bob)` <- Important to not have spaces
+`!e 3d6 1 Initiative(Bob)` <- Important to not have spaces for description
   
-`!e 4d6 2 Damage(Eddie)` <- Important to not have spaces
+`!e 4d6 2 Damage(Eddie)` <- Important to not have spaces for description
   
 
   This is a labor of love for myself and my friends, please don't think that I take this any more seriously than it deserves :)
