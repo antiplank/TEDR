@@ -3,9 +3,14 @@ A dice rolling Discord bot for The Expanse Roleplaying Game. Rolls any number of
 
 Usage: !e xdy <mod> <description>
 Examples:
+  
 !e 3d6 5
+  
 !e 4d12 -5
+  
 !e 3d6 1 Initiative(Bob)
+  
 !e 4d6 2 Damage(Eddie)
+  
 
   This is a labor of love for myself and my friends, please don't think that I take this any more seriously than it deserves :)
