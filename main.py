@@ -14,16 +14,14 @@ load_dotenv(dotenv_path=env_path)
 client = discord.Client()
 TOKEN = os.getenv("DISCORD_TOKEN")
 
+
 # Log in to Discord
-
-
 @client.event
 async def on_ready():
     print('We have logged in as {0.user}. Hitch your tits and pucker up, it\'s time to peel the paint!'.format(client))
 
+
 # Wait for a message
-
-
 @client.event
 async def on_message(message):
     userfull = str(message.author)
@@ -83,7 +81,7 @@ async def on_message(message):
         if not re.search("^[0-9].*[d]*[0-9].*", dice):
             return
 
-        # Stringify and concatenate some varibles for output
+        # Stringify and concatenate some variables for output
         desc = str(desc)
         bonus = str(bonus)
         dice = str(dice)
@@ -112,7 +110,7 @@ async def on_message(message):
                 a = str(a)
                 msg += a + " + "
 
-        # Itterate through the rolls
+        # Iterate through the rolls
         for ele in range(0, len(results)):
             total = total + results[ele]
         bonus = str(bonus)
