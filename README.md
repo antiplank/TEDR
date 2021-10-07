@@ -1,7 +1,8 @@
 # TEDR
 A dice rolling Discord bot for The Expanse Roleplaying Game. Rolls any number of dice or facets with an optional modifier and description. Doubles will be bolded and a drama die will be displayed on a roll of a 3d6. The bot will display an embed in the channel it was invoked, with a heading showing the user that invoked it. Triggering message will be deleted after the roll.
 
-Usage: !e xdy <mod> <description>  
+Usage: !e xdy <mod> <description> 
+  
 Examples:
   
 !e 3d6 5
