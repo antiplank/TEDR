@@ -101,7 +101,7 @@ async def on_message(message):
         # Identify matches and adjust output
         for a in count:
             if count[a] > 1:
-                for g in range(count[a]):
+                for _ in range(count[a]):
                     r = str(a)
                     a = str(a)
                     msg += ("**" + r + "** + ")
