@@ -21,7 +21,7 @@ async def on_message(message):
     if message.author.id == client.user.id:
         return
 
-    if message.content.startswith('^botservers'):
+    if message.content.startswith('!servers'):
         if len(client.guilds) == 1:
             await message.channel.send("I'm in " + str(len(client.guilds)) + " server!")
         else:
@@ -102,4 +102,3 @@ async def on_message(message):
     del results
 client.run('ODkyNDM0MTQ3NzgyNTY1ODkw.YVM2EQ.edtdJLe0sZc3IDNgwRIiiPHRt7g')
 # client.run(os.getenv('TOKEN'))
-# test
