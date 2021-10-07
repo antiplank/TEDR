@@ -101,4 +101,3 @@ async def on_message(message):
         await message.channel.send(embed=embed)
     del results
 client.run('ODkyNDM0MTQ3NzgyNTY1ODkw.YVM2EQ.edtdJLe0sZc3IDNgwRIiiPHRt7g')
-# client.run(os.getenv('TOKEN'))
