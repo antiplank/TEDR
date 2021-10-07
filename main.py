@@ -109,7 +109,7 @@ async def on_message(message):
                 a = str(a)
                 msg += a + " + "
 
-        # Iterate through the rolls to build results
+        # Iterate through the rolls to build total
         for ele in range(0, len(results)):
             total = total + results[ele]
         bonus = str(bonus)
