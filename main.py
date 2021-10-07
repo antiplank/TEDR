@@ -15,7 +15,7 @@ client = discord.Client()
 TOKEN = os.getenv("DISCORD_TOKEN")
 
 
-# Log in to Discord
+# Verify login to Discord
 @client.event
 async def on_ready():
     print('We have logged in as {0.user}. Hitch your tits and pucker up, it\'s time to peel the paint!'.format(client))
@@ -135,4 +135,6 @@ async def on_message(message):
 
     # Clear the results list for next roll
     del results
+
+# Run the bot
 client.run(TOKEN)
