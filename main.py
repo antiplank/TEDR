@@ -71,7 +71,6 @@ async def on_message(message):
         if msg_list[-1].isnumeric() and word_count == 3:
             arg, dice, bonus = msg.split(" ")
             desc = str("")
-
         if word_count == 2:
             arg, dice = msg.split(" ")
             bonus = 0
@@ -110,7 +109,7 @@ async def on_message(message):
                 a = str(a)
                 msg += a + " + "
 
-        # Iterate through the rolls
+        # Iterate through the rolls to build results
         for ele in range(0, len(results)):
             total = total + results[ele]
         bonus = str(bonus)
