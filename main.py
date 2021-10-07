@@ -80,7 +80,7 @@ async def on_message(message):
         if not re.search("^[0-9].*[d]*[0-9].*", dice):
             return
 
-        # Stringify and concatenate some variables for output
+        # Stringify, integerize, and concatenate some variables for output
         desc = str(desc)
         bonus = str(bonus)
         dice = str(dice)
