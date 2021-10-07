@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Load .env file and token
-env_path = Path('/home/plank/scripts/')/'.env'
+env_path = Path('/home/plank/scripts')/'.env'
 load_dotenv(dotenv_path=env_path)
 client = discord.Client()
 TOKEN = os.getenv("DISCORD_TOKEN")
