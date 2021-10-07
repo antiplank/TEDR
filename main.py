@@ -136,6 +136,6 @@ async def on_message(message):
         # Send the completed message
         await message.channel.send(embed=embed)
 
-    # Clear the reults list for next roll
+    # Clear the results list for next roll
     del results
 client.run(TOKEN)
