@@ -45,9 +45,10 @@ async def on_message(message):
         await message.channel.send(file=discord.File('/home/plank/images/bobbie.gif'))
         await message.delete()
 
- # Amos!
+# Amos!
     if message.content.startswith('!amos'):
         await message.channel.send(file=discord.File('/home/plank/images/amos.gif'))
+        await message.delete()
 
     # Wait for message starting with "!e"
 
