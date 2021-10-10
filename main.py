@@ -80,6 +80,10 @@ async def on_message(message):
             arg, dice = msg.split(" ")
             bonus = 0
             desc = str("")
+        if word_count == 1:
+            dice = "3d6"
+            bonus = 0
+            desc = str("")
 
         # Use regex to validate xdy format
         if not re.search("^[0-9].*[d]*[0-9].*", dice):
