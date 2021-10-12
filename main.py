@@ -75,9 +75,9 @@ async def on_message(message):
             if churn_change.lstrip("-+").isnumeric():
                 churn = int(churn)
                 churn_change = int(churn_change)
-                if churn >= 30:
-                    churn = 0
                 churn = churn_change + churn
+                if churn > 30:
+                    churn = churn - 30
                 with open("/home/plank/txt/churn.txt", "w") as file2:
                     churn = str(churn)
                     file2.write(churn)
