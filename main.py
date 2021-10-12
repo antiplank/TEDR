@@ -70,7 +70,7 @@ async def on_message(message):
                 with open("/home/plank/txt/churn.txt", "w") as file2:
                     file2.write(churn)
                     file2.close()
-                await message.channel.send("Churn has been reset to zero")
+                await message.channel.send("Churn has been reset to zero.")
                 await message.channel.send(file=discord.File('/home/plank/images/churn_' + churn + ".png"))
                 await message.delete()
 
