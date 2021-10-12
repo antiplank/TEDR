@@ -72,9 +72,11 @@ async def on_message(message):
                 await message.channel.send("Churn has been reset to zero")
                 await message.channel.send(file=discord.File('/home/plank/images/churn_' + churn + ".png"))
                 await message.delete()
-            if churn_change.isnumeric():
+            if churn_change.lstrip("-+").isnumeric():
                 churn = int(churn)
                 churn_change = int(churn_change)
+                if churn >= 30:
+                    churn = 0
                 churn = churn_change + churn
                 with open("/home/plank/txt/churn.txt", "w") as file2:
                     churn = str(churn)
