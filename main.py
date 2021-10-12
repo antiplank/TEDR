@@ -114,7 +114,7 @@ async def on_message(message):
         dice = str("1d6")
         bonus = 0
         desc = str("")
-        special_char = re.compile("[@_!#$%^&*()<>?/\\|}{~:]")
+        special_char = re.compile("[@_!#$%^&*()<>?/\\\\|}{~:]")
 
         # Figure out what the user sent and update variables accordingly
         if word_count == 4:
