@@ -7,6 +7,9 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 load_dotenv()
+file = open("/home/plank/txt/churn.txt", "r")
+churn = file.read()
+file.close()
 
 # Load .env file and token
 env_path = Path('/home/plank/scripts')/'.env'
@@ -24,10 +27,14 @@ async def on_ready():
 # Wait for a message
 @client.event
 async def on_message(message):
+    global churn
     userfull = str(message.author)
     user, idnum = userfull.split("#")
     icon = message.author.avatar_url
     results = []
+    with open("/home/plank/txt/churn.txt", "r") as file2:
+        churn = file2.read()
+
 
 # If the bot sent the message, ignore it
     if message.author.id == client.user.id:
@@ -49,6 +56,50 @@ async def on_message(message):
     if message.content.startswith('!amos'):
         await message.channel.send(file=discord.File('/home/plank/images/amos.gif'))
         await message.delete()
+
+    # Churn Tracker
+    if message.content.startswith('!churn'):
+        churn_input = message.content
+        churn_word_count = len(churn_input.split())
+        if churn_word_count == 2:
+            arg, churn_change = churn_input.split()
+            if churn_change == "reset":
+                churn = str("0")
+                with open("/home/plank/txt/churn.txt", "w") as file2:
+                    file2.write(churn)
+                    file2.close()
+                    file2.close()
+                await message.channel.send("Churn has been reset to zero")
+                await message.channel.send(file=discord.File('/home/plank/images/churn_' + churn + ".png"))
+                await message.delete()
+            if churn_change.isnumeric():
+                churn = int(churn)
+                churn_change = int(churn_change)
+                churn = churn_change + churn
+                with open("/home/plank/txt/churn.txt", "w") as file2:
+                    churn = str(churn)
+                    file2.write(churn)
+                    file2.close()
+                    await message.channel.send(file=discord.File('/home/plank/images/churn_' + churn + ".png"))
+                    await message.delete()
+                with open("churn.txt", "r") as file2:
+                    churn = file2.read()
+                    file2.close()
+                    await message.channel.send(file=discord.File('/home/plank/images/churn_' + churn + ".png"))
+                    await message.delete()
+        if churn_word_count == 1:
+            await message.channel.send(file=discord.File('/home/plank/images/churn_' + churn + ".png"))
+            await message.delete()
+
+        if churn_word_count == 2:
+            churn_arg, churn_change = churn_input.split()
+            if churn_change.isnumeric():
+                churn += churn_change
+                with open("/home/plank/txt/churn.txt", "w") as f:
+                    f.seek(0)
+                    f.write(churn)
+                    f.truncate()
+                    f.close()
 
     # Wait for message starting with "!e"
 
