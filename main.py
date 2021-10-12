@@ -82,6 +82,8 @@ async def on_message(message):
                 churn = churn_change + churn
                 if churn > 30:
                     churn = churn - 30
+                if churn < 0:
+                    churn = 0
                 with open("/home/plank/txt/churn.txt", "w") as file2:
                     churn = str(churn)
                     file2.write(churn)
