@@ -63,6 +63,8 @@ async def on_message(message):
         churn_word_count = len(churn_input.split())
         if churn_word_count == 2:
             arg, churn_change = churn_input.split()
+
+            # Set churn to zero if 'reset' is sent instead of a number
             if churn_change == "reset":
                 churn = str("0")
                 with open("/home/plank/txt/churn.txt", "w") as file2:
@@ -72,6 +74,8 @@ async def on_message(message):
                 await message.channel.send("Churn has been reset to zero")
                 await message.channel.send(file=discord.File('/home/plank/images/churn_' + churn + ".png"))
                 await message.delete()
+
+            # Update churn if numerical input sent
             if churn_change.lstrip("-+").isnumeric():
                 churn = int(churn)
                 churn_change = int(churn_change)
@@ -89,6 +93,8 @@ async def on_message(message):
                     file2.close()
                     await message.channel.send(file=discord.File('/home/plank/images/churn_' + churn + ".png"))
                     await message.delete()
+
+        # Display current churn
         if churn_word_count == 1:
             await message.channel.send(file=discord.File('/home/plank/images/churn_' + churn + ".png"))
             await message.delete()
