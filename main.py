@@ -199,11 +199,13 @@ async def on_message(message):
         # Delete triggering user message
         await message.delete()
 
-        # Send the completed message
+        # DM the message to the sending user and send a message to the channel
         if message.content.startswith('!edm'):
             await message.author.send(embed=embed)
             await message.channel.send(user + " is sealing your fate.")
             return
+
+        # Send the message to the channel
         else:
             await message.channel.send(embed=embed)
 
