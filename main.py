@@ -200,7 +200,12 @@ async def on_message(message):
         await message.delete()
 
         # Send the completed message
-        await message.channel.send(embed=embed)
+        if message.content.startswith('!edm'):
+            await message.author.send(embed=embed)
+            await message.channel.send(user + " is sealing your fate.")
+            return
+        else:
+            await message.channel.send(embed=embed)
 
     # Clear the results list for next roll
     del results
