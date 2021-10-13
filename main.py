@@ -56,6 +56,9 @@ async def on_message(message):
     if message.content.startswith('!amos'):
         await message.channel.send(file=discord.File('/home/plank/images/amos.gif'))
         await message.delete()
+# Test area
+    if message.content.startswith('!popcorn'):
+        await message.channel.send(":blobpopcorn:")
 
     # Churn Tracker
     if message.content.startswith('!churn'):
@@ -202,7 +205,7 @@ async def on_message(message):
         # DM the message to the sending user and send a message to the channel
         if message.content.startswith('!edm'):
             await message.author.send(embed=embed)
-            await message.channel.send(user + " is sealing your fate.")
+            await message.channel.send(":skull: " + user + " is sealing your fate. :skull:")
             return
 
         # Send the message to the channel

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aa330508-2809-410b-b1f5-25a166930a86" name="Changes" comment="Random changes">
+    <list default="true" id="aa330508-2809-410b-b1f5-25a166930a86" name="Changes" comment="Added DM rolls and churn tracker.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -143,20 +143,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1633370959852</updated>
-    </task>
-    <task id="LOCAL-00003" summary="First commit">
-      <created>1633560767473</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1633560767473</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Second commit">
-      <created>1633562589730</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1633562589730</updated>
     </task>
     <task id="LOCAL-00005" summary="Second commit">
       <created>1633571856351</created>
@@ -487,7 +473,21 @@
       <option name="project" value="LOCAL" />
       <updated>1634081532337</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Added DM rolls and churn tracker.">
+      <created>1634145204111</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1634145204111</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Added DM rolls and churn tracker.">
+      <created>1634145297212</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1634145297212</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -510,6 +510,7 @@
     <MESSAGE value="Updated name" />
     <MESSAGE value="Added dotenv for token security and fully commented code." />
     <MESSAGE value="Random changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Random changes" />
+    <MESSAGE value="Added DM rolls and churn tracker." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added DM rolls and churn tracker." />
   </component>
 </project>
