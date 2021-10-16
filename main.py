@@ -201,8 +201,15 @@ async def on_message(message):
 
         # DM the message to the sending user and send a message to the channel
         if message.content.startswith('!edm'):
+            dm_msg_list = (
+                user + " is sealing your fate. <a:meow_popcorn:897966437556183050>",
+                user + " is deciding whether to space you or not. <a:meow_popcorn:897966437556183050>",
+                "Hitch your tits and pucker up, " + user + " is rolling in secret. "
+                                                           "<:TheExpanse_Emoji:898723213801054238>",
+                "Don't worry, I'm sure " + user + " is just rolling dice for fun. <a:meow_popcorn:897966437556183050>")
+
             await message.author.send(embed=embed)
-            await message.channel.send(user + " is sealing your fate. <a:meow_popcorn:897966437556183050>")
+            await message.channel.send(random.choice(dm_msg_list))
             return
 
         # Send the message to the channel
