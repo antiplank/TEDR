@@ -12,7 +12,7 @@ Examples:
   
 !e 3d6 1 Initiative(Bob) <- Important to not have spaces for description
   
-!e 4d6 2 Damage(Eddie) <- Important to not have spaces for description```
+!e 4d6 2 Damage(Eddie)   <- Important to not have spaces for description```
 ```
 
 ## GM Rolls:
@@ -27,7 +27,7 @@ If you want the results of the roll to be sent to you in a DM.
   
 !edm 3d6 1 Initiative(Bob) <- Important to not have spaces for description
   
-!edm 4d6 2 Damage(Eddie) <- Important to not have spaces for description
+!edm 4d6 2 Damage(Eddie)   <- Important to not have spaces for description
 ```
 
 ## Churn Counter:
@@ -40,7 +40,7 @@ Keeps track of the churn with a graphical display.
  ```
 !churn          <- Displays the current churn
                      
-!churn <num> <- Adds or subtracts (when passed "-x") from the churn
+!churn <num>    <- Adds or subtracts (when passed "-x") from the churn
                   
 !churn reset    <- Resets the churn to zero
 ```
