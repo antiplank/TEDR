@@ -12,6 +12,25 @@ Examples:
 `!e 3d6 1 Initiative(Bob)` <- Important to not have spaces for description
   
 `!e 4d6 2 Damage(Eddie)` <- Important to not have spaces for description
-  
 
-  This is a labor of love for myself and my friends, please don't think that I take this any more seriously than it deserves :)
+GM Rolls:
+If you want the results of the roll to be sent to you in a DM
+
+Usage: `!edm xdy <mod> <description>'
+
+`!edm 3d6 5`
+  
+`!edm 4d12 -5`
+  
+`!edm 3d6 1 Initiative(Bob)` <- Important to not have spaces for description
+  
+`!edm 4d6 2 Damage(Eddie)` <- Important to not have spaces for description
+
+
+Churn Counter:
+`!churn`          <- Displays the current churn
+`!churn <+/-num>` <- Adds or subtracts from the churn
+`!churn reset`    <- Resets the churn to zero
+
+
+This is a labor of love for myself and my friends, please don't think that I take this any more seriously than it deserves :)
