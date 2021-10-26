@@ -133,7 +133,7 @@ async def on_message(message):
         if msg_list[-1].isalpha() and word_count == 3 and (special_char.search(msg_list[-1]) is None):
             arg, dice, desc = msg.split(" ")
             bonus = 0
-        if msg_list[-1].isnumeric() and word_count == 3:
+        if msg_list[-1].lstrip("-+").isnumeric() and word_count == 3:
             arg, dice, bonus = msg.split(" ")
             desc = str("")
         if word_count == 2:

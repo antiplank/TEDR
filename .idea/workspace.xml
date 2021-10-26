@@ -167,13 +167,6 @@
       <option name="presentableId" value="Default" />
       <updated>1633370959852</updated>
     </task>
-    <task id="LOCAL-00008" summary="Updated name">
-      <created>1633604981302</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1633604981302</updated>
-    </task>
     <task id="LOCAL-00009" summary="Added dotenv for token security and fully commented code.">
       <created>1633613084226</created>
       <option name="number" value="00009" />
@@ -510,7 +503,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634342983890</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Added DM rolls and churn tracker.">
+      <created>1634422799278</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1634422799279</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
