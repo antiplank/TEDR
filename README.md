@@ -28,8 +28,12 @@ Usage: `!edm xdy <mod> <description>'
 
 
 Churn Counter:
+Keeps track of the churn with a graphical display.
+
+Usage: `!churn <num>`
+
 `!churn`          <- Displays the current churn
-`!churn <+/-num>` <- Adds or subtracts from the churn
+`!churn <num>` <- Adds or subtracts (when passed "-x") from the churn
 `!churn reset`    <- Resets the churn to zero
 
 
