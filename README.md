@@ -16,7 +16,7 @@ Examples:
 ## GM Rolls:
 If you want the results of the roll to be sent to you in a DM.
 
-Usage: `!edm xdy <mod> <description>'
+### Usage: `!edm xdy <mod> <description>'
 
 `!edm 3d6 5`
   
@@ -30,10 +30,14 @@ Usage: `!edm xdy <mod> <description>'
 ## Churn Counter:
 Keeps track of the churn with a graphical display.
 
-Usage: `!churn <num>`
+### Usage: `!churn <num>`
 
+ Examples:
+ 
 `!churn`          <- Displays the current churn
+                     
 `!churn <num>` <- Adds or subtracts (when passed "-x") from the churn
+                  
 `!churn reset`    <- Resets the churn to zero
 
 
