@@ -14,7 +14,7 @@ Examples:
 `!e 4d6 2 Damage(Eddie)` <- Important to not have spaces for description
 
 ## GM Rolls:
-If you want the results of the roll to be sent to you in a DM
+If you want the results of the roll to be sent to you in a DM.
 
 Usage: `!edm xdy <mod> <description>'
 
