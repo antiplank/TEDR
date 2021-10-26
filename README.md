@@ -13,7 +13,7 @@ Examples:
   
 `!e 4d6 2 Damage(Eddie)` <- Important to not have spaces for description
 
-#GM Rolls:
+## GM Rolls:
 If you want the results of the roll to be sent to you in a DM
 
 Usage: `!edm xdy <mod> <description>'
@@ -27,7 +27,7 @@ Usage: `!edm xdy <mod> <description>'
 `!edm 4d6 2 Damage(Eddie)` <- Important to not have spaces for description
 
 
-#Churn Counter:
+## Churn Counter:
 Keeps track of the churn with a graphical display.
 
 Usage: `!churn <num>`
