@@ -45,4 +45,4 @@ Keeps track of the churn with a graphical display.
 !churn reset    <- Resets the churn to zero
 ```
 
-This is a labor of love for myself and my friends, please don't think that I take this any more seriously than it deserves :)
+This is a labor of love for myself and my friends but I hope other people can find it useful.
