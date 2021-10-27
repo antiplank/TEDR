@@ -10,9 +10,9 @@ Examples:
   
 !e 4d12 -5
   
-!e 3d6 1 Initiative(Bob) <- Important to not have spaces for description
+!e 3d6 1 Initiative(Bob) <- Important to not have spaces in description
   
-!e 4d6 2 Damage(Eddie)   <- Important to not have spaces for description
+!e 4d6 2 Damage(Eddie)   <- Important to not have spaces in description
 ```
 
 ## GM Rolls:
@@ -25,9 +25,9 @@ If you want the results of the roll to be sent to you in a DM.
   
 !edm 4d12 -5
   
-!edm 3d6 1 Initiative(Bob) <- Important to not have spaces for description
+!edm 3d6 1 Initiative(Bob) <- Important to not have spaces in description
   
-!edm 4d6 2 Damage(Eddie)   <- Important to not have spaces for description
+!edm 4d6 2 Damage(Eddie)   <- Important to not have spaces in description
 ```
 
 ## Churn Counter:
