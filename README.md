@@ -40,7 +40,7 @@ Keeps track of the churn with a graphical display.
  ```
 !churn          <- Displays the current churn
                      
-!churn <num>    <- Adds or subtracts (when passed "-x") from the churn
+!churn <num>    <- Adds to or subtracts from the churn when passed a positive or negative integer
                   
 !churn reset    <- Resets the churn to zero
 ```
