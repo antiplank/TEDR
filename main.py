@@ -6,9 +6,9 @@ import discord
 from pathlib import Path
 import os
 from dotenv import load_dotenv
+
+
 load_dotenv()
-
-
 file = open("/home/plank/txt/churn.txt", "r")
 churn = file.read()
 file.close()
