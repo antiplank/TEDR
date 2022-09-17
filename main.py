@@ -1,30 +1,25 @@
-# Import modules
+# Import libraries
 import collections
 import random
 import re
 import discord
-from pathlib import Path
 import os
 from dotenv import load_dotenv
 
 
-load_dotenv()
 file = open("/home/plank/txt/churn.txt", "r")
 churn = file.read()
 file.close()
 
 # Load .env file and token
-env_path = Path('/home/plank/scripts')/'.env'
-load_dotenv(dotenv_path=env_path)
-client = discord.Client()
+load_dotenv()
 TOKEN = os.getenv("DISCORD_TOKEN")
-
+client = discord.Client(intents=discord.Intents.all())
 
 # Verify login to Discord
 @client.event
 async def on_ready():
     print('We have logged in as {0.user}. Hitch your tits and pucker up, it\'s time to peel the paint!'.format(client))
-
 
 # Wait for a message
 @client.event
@@ -32,11 +27,10 @@ async def on_message(message):
     global churn
     userfull = str(message.author)
     user, idnum = userfull.split("#")
-    icon = message.author.avatar_url
+    icon = message.author.avatar.url
     results = []
     with open("/home/plank/txt/churn.txt", "r") as file2:
         churn = file2.read()
-
 
 # If the bot sent the message, ignore it
     if message.author.id == client.user.id:
@@ -195,7 +189,7 @@ async def on_message(message):
             msg = "```ini\n[" + desc + "]```\n" + msg
 
         # Define embeds
-        embed = discord.Embed(description=msg, color=discord.Color.random(), inline=True)
+        embed = discord.Embed(description=msg, color=discord.Color.random())
         embed.set_author(name=user, icon_url=icon)
 
         # Delete triggering user message
