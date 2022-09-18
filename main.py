@@ -25,17 +25,9 @@ async def on_message(message):
     global churn
     userfull = str(message.author)
     user, idnum = userfull.split("#")
+    user_trun = user + idnum
     icon = message.author.avatar.url
     results = []
-    churnpath = "/home/plank/txt/" + user + "_churn.txt"
-    if os.path.exists("/home/plank/txt/" + user + "_churn.txt"):
-        with open("/home/plank/txt/" + user + "_churn.txt", "r") as file2:
-            churn = file2.read()
-    else:
-        await message.channel.send("Churn file created, " + user + ". Type \"!churn\" again to start using!")
-        with open(churnpath, "w") as file2:
-            file2.write("0")
-            churn = file2.read()
 
     # If the bot sent the message, ignore it
     if message.author.id == client.user.id:
@@ -60,6 +52,24 @@ async def on_message(message):
 
     # Churn Tracker
     if message.content.startswith('!churn'):
+        churnpath = "/home/plank/txt/" + user_trun + "_churn.txt"
+        if os.path.exists("/home/plank/txt/" + user_trun + "_churn.txt"):
+            with open("/home/plank/txt/" + user_trun + "_churn.txt", "r") as file2:
+                churn = file2.read()
+        else:
+            await message.channel.send(
+                "Personal Churn counter created and set to zero, " + user + "!\n\nType \"!churn\" "
+                                                                            "to display current "
+                                                                            "churn. Type \"!churn "
+                                                                            "3\" to add three to "
+                                                                            "the churn. Type "
+                                                                            "\"!churn -2\" to "
+                                                                            "remove two churn. "
+                                                                            "Type \"!churn reset\" "
+                                                                            "to reset. Enjoy!")
+            with open(churnpath, "w") as file2:
+                file2.write("0")
+                churn = file2.read()
         churn_input = message.content
         churn_word_count = len(churn_input.split())
         if churn_word_count == 2:
@@ -68,7 +78,7 @@ async def on_message(message):
             # Set churn to zero if 'reset' is sent instead of a number
             if churn_change == "reset":
                 churn = str("0")
-                with open("/home/plank/txt/" + user + "_churn.txt", "w") as file2:
+                with open("/home/plank/txt/" + user_trun + "_churn.txt", "w") as file2:
                     file2.write(churn)
                     file2.close()
                 await message.channel.send("Churn has been reset to zero.")
@@ -84,7 +94,7 @@ async def on_message(message):
                     churn = churn - 30
                 if churn < 0:
                     churn = 0
-                with open("/home/plank/txt/" + user + "_churn.txt", "w") as file2:
+                with open("/home/plank/txt/" + user_trun + "_churn.txt", "w") as file2:
                     churn = str(churn)
                     file2.write(churn)
                     file2.close()
@@ -105,7 +115,7 @@ async def on_message(message):
             churn_arg, churn_change = churn_input.split()
             if churn_change.isnumeric():
                 churn += churn_change
-                with open("/home/plank/txt/" + user + "_churn.txt", "w") as f:
+                with open("/home/plank/txt/" + user_trun + "_churn.txt", "w") as f:
                     f.seek(0)
                     f.write(churn)
                     f.truncate()
