@@ -7,19 +7,17 @@ import os
 from dotenv import load_dotenv
 
 
-file = open("/home/plank/txt/churn.txt", "r")
-churn = file.read()
-file.close()
-
 # Load .env file and token
 load_dotenv()
 TOKEN = os.getenv("DISCORD_TOKEN")
 client = discord.Client(intents=discord.Intents.all())
 
+
 # Verify login to Discord
 @client.event
 async def on_ready():
     print('We have logged in as {0.user}. Hitch your tits and pucker up, it\'s time to peel the paint!'.format(client))
+
 
 # Wait for a message
 @client.event
@@ -29,26 +27,33 @@ async def on_message(message):
     user, idnum = userfull.split("#")
     icon = message.author.avatar.url
     results = []
-    with open("/home/plank/txt/churn.txt", "r") as file2:
-        churn = file2.read()
+    churnpath = "/home/plank/txt/" + user + "_churn.txt"
+    if os.path.exists("/home/plank/txt/" + user + "_churn.txt"):
+        with open("/home/plank/txt/" + user + "_churn.txt", "r") as file2:
+            churn = file2.read()
+    else:
+        await message.channel.send("Churn file created, " + user + ". Type \"!churn\" again to start using!")
+        with open(churnpath, "w") as file2:
+            file2.write("0")
+            churn = file2.read()
 
-# If the bot sent the message, ignore it
+    # If the bot sent the message, ignore it
     if message.author.id == client.user.id:
         return
 
-# Print how many servers the bot is connected to
+    # Print how many servers the bot is connected to
     if message.content.startswith('!servers'):
         if len(client.guilds) == 1:
             await message.channel.send("I'm in " + str(len(client.guilds)) + " server!")
         else:
             await message.channel.send("I'm in " + str(len(client.guilds)) + " servers!")
 
-# Bobbie!
+    # Bobbie!
     if message.content.startswith('!bobbie'):
         await message.channel.send(file=discord.File('/home/plank/images/bobbie.gif'))
         await message.delete()
 
-# Amos!
+    # Amos!
     if message.content.startswith('!amos'):
         await message.channel.send(file=discord.File('/home/plank/images/amos.gif'))
         await message.delete()
@@ -63,7 +68,7 @@ async def on_message(message):
             # Set churn to zero if 'reset' is sent instead of a number
             if churn_change == "reset":
                 churn = str("0")
-                with open("/home/plank/txt/churn.txt", "w") as file2:
+                with open("/home/plank/txt/" + user + "_churn.txt", "w") as file2:
                     file2.write(churn)
                     file2.close()
                 await message.channel.send("Churn has been reset to zero.")
@@ -79,7 +84,7 @@ async def on_message(message):
                     churn = churn - 30
                 if churn < 0:
                     churn = 0
-                with open("/home/plank/txt/churn.txt", "w") as file2:
+                with open("/home/plank/txt/" + user + "_churn.txt", "w") as file2:
                     churn = str(churn)
                     file2.write(churn)
                     file2.close()
@@ -100,14 +105,13 @@ async def on_message(message):
             churn_arg, churn_change = churn_input.split()
             if churn_change.isnumeric():
                 churn += churn_change
-                with open("/home/plank/txt/churn.txt", "w") as f:
+                with open("/home/plank/txt/" + user + "_churn.txt", "w") as f:
                     f.seek(0)
                     f.write(churn)
                     f.truncate()
                     f.close()
 
     # Wait for message starting with "!e"
-
     if message.content.startswith('!e'):
 
         # Declare some variables
