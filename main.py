@@ -66,9 +66,8 @@ async def on_message(message):
                                                                             "\"!churn -2\" to "
                                                                             "remove two churn. "
                                                                             "Type \"!churn reset\" "
-                                                                            "to reset. Enjoy and "
-                                                                            "sorry for the "
-                                                                            "interuption!")
+                                                                            "to reset. Enjoy!"
+                                                                            )
             with open(churnpath, "w") as file2:
                 file2.write("0")
                 churn = file2.read()
