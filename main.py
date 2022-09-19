@@ -108,16 +108,6 @@ async def on_message(message):
             await message.channel.send(file=discord.File('/home/plank/images/churn_' + churn + ".png"))
             await message.delete()
 
-        if churn_word_count == 2:
-            churn_arg, churn_change = churn_input.split()
-            if churn_change.isnumeric():
-                churn += churn_change
-                with open("/home/plank/txt/" + user_trun + "_churn.txt", "w") as f:
-                    f.seek(0)
-                    f.write(churn)
-                    f.truncate()
-                    f.close()
-
     # Wait for message starting with "!e"
     if message.content.startswith('!e'):
 
