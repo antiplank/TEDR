@@ -28,25 +28,6 @@ async def on_message(message):
     user_trun = user + idnum
     icon = message.author.avatar.url
     results = []
-    churnpath = "/home/plank/txt/" + user_trun + "_churn.txt"
-    if os.path.exists("/home/plank/txt/" + user_trun + "_churn.txt"):
-        with open("/home/plank/txt/" + user_trun + "_churn.txt", "r") as file2:
-            churn = file2.read()
-    else:
-        await message.channel.send("Personal Churn counter created and set to zero, " + user + "!\n\nType \"!churn\" "
-                                                                                               "to display current "
-                                                                                               "churn. Type \"!churn "
-                                                                                               "3\" to add three to "
-                                                                                               "the churn. Type "
-                                                                                               "\"!churn -2\" to "
-                                                                                               "remove two churn. "
-                                                                                               "Type \"!churn reset\" "
-                                                                                               "to reset. Enjoy and "
-                                                                                               "sorry for the "
-                                                                                               "interuption!")
-        with open(churnpath, "w") as file2:
-            file2.write("0")
-            churn = file2.read()
 
     # If the bot sent the message, ignore it
     if message.author.id == client.user.id:
@@ -71,6 +52,26 @@ async def on_message(message):
 
     # Churn Tracker
     if message.content.startswith('!churn'):
+        churnpath = "/home/plank/txt/" + user_trun + "_churn.txt"
+        if os.path.exists("/home/plank/txt/" + user_trun + "_churn.txt"):
+            with open("/home/plank/txt/" + user_trun + "_churn.txt", "r") as file2:
+                churn = file2.read()
+        else:
+            await message.channel.send(
+                "Personal Churn counter created and set to zero, " + user + "!\n\nType \"!churn\" "
+                                                                            "to display current "
+                                                                            "churn. Type \"!churn "
+                                                                            "3\" to add three to "
+                                                                            "the churn. Type "
+                                                                            "\"!churn -2\" to "
+                                                                            "remove two churn. "
+                                                                            "Type \"!churn reset\" "
+                                                                            "to reset. Enjoy and "
+                                                                            "sorry for the "
+                                                                            "interuption!")
+            with open(churnpath, "w") as file2:
+                file2.write("0")
+                churn = file2.read()
         churn_input = message.content
         churn_word_count = len(churn_input.split())
         if churn_word_count == 2:
@@ -92,16 +93,14 @@ async def on_message(message):
                 churn_change = int(churn_change)
                 churn = churn_change + churn
                 if churn > 30:
-                    churn = churn - 30
+                    churn = 30
                 if churn < 0:
                     churn = 0
-                with open("/home/plank/txt/" + user_trun + "_churn.txt", "w") as file2:
+                with open("/home/plank/txt/" + user_trun + "_churn.txt", "r+") as file2:
                     churn = str(churn)
                     file2.write(churn)
-                    file2.close()
                     await message.channel.send(file=discord.File('/home/plank/images/churn_' + churn + ".png"))
                     await message.delete()
-                with open("churn.txt", "r") as file2:
                     churn = file2.read()
                     file2.close()
 
