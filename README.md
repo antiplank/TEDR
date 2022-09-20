@@ -31,7 +31,7 @@ If you want the results of the roll to be sent to you in a DM.
 ```
 
 ## Churn Counter:
-Keeps track of the churn with a graphical display.
+Keeps track of the churn with a graphical display. You can direct message the bot to keep the churn to yourself if you prefer.
 
 ### Usage: `!churn <num>`
 
