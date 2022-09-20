@@ -40,12 +40,12 @@ async def on_message(message):
         else:
             await message.channel.send("I'm in " + str(len(client.guilds)) + " servers!")
 
-    # Bobbie!
+    # Bobbie
     if message.content.startswith('!bobbie'):
         await message.channel.send(file=discord.File('/home/plank/images/bobbie.gif'))
         await message.delete()
 
-    # Amos!
+    # Amos
     if message.content.startswith('!amos'):
         await message.channel.send(file=discord.File('/home/plank/images/amos.gif'))
         await message.delete()
