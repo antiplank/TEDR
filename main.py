@@ -82,8 +82,8 @@ async def on_message(message):
                 with open("/home/plank/txt/" + user_trun + "_churn.txt", "w") as file2:
                     file2.write(churn)
                     file2.close()
-                await message.channel.send("Churn has been reset to zero.")
                 await message.channel.send(file=discord.File('/home/plank/images/churn_' + churn + ".png"))
+                await message.channel.send("Churn has been reset to zero.")
                 await message.delete()
 
             # Update churn if numerical input sent
@@ -99,6 +99,7 @@ async def on_message(message):
                     churn = str(churn)
                     file2.write(churn)
                     await message.channel.send(file=discord.File('/home/plank/images/churn_' + churn + ".png"))
+                    await message.channel.send("Churn is now at " + churn + ".")
                     await message.delete()
                     churn = file2.read()
                     file2.close()
@@ -106,6 +107,7 @@ async def on_message(message):
         # Display current churn
         if churn_word_count == 1:
             await message.channel.send(file=discord.File('/home/plank/images/churn_' + churn + ".png"))
+            await message.channel.send("Churn is at " + churn + ".")
             await message.delete()
 
     # Wait for message starting with "!e"
