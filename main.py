@@ -381,7 +381,7 @@ def build_help_embed() -> discord.Embed:
     embed = discord.Embed(
         title="TEDR - The Expanse Dice Roller",
         description=(
-            "I roll dice and I keep score. Type `/` in any channel I can see "
+            "I roll dice and I keep track of the Churn. Type `/` in any channel I can see "
             "to browse my commands, or use the ones below directly."
         ),
         color=discord.Color.blurple(),
@@ -406,14 +406,6 @@ def build_help_embed() -> discord.Embed:
             f"{client.mention('churn add')} - add or subtract an amount\n"
             f"{client.mention('churn reset')} - back to zero\n\n"
             "Churn is per-person and survives restarts."
-        ),
-        inline=False,
-    )
-    embed.add_field(
-        name="Odds and ends",
-        value=(
-            f"{client.mention('servers')} - {client.mention('help')} for this "
-            "message again"
         ),
         inline=False,
     )
